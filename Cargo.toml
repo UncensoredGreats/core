@@ -1,7 +1,16 @@
 [workspace]
 members = [
     "src/ugd_backend",
-    "src/ugd_backend/db/satellite",
-    "src/ugd_backend/db/shared",
+    "src/shared",
+    "src/utils",
 ]
 resolver = "2"
+
+[workspace.dependencies]
+candid = "0.10.2"
+ic-cdk = "0.12.1"
+ic-cdk-macros = "0.8.1"
+ic-ledger-types = "0.9.0"
+ic-cdk-timers = "0.6.0"
+serde = "1.0.190"
+serde_cbor = "0.11.2"

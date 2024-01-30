@@ -1,8 +1,8 @@
 mod source_cards;
 pub use source_cards::{save_sc, bookmark_sc, delete_sc, get_sc, get_bookmarks};
 
-mod weaviate;
-pub use weaviate::get_weaviate_query;
+// mod weaviate;
+// pub use weaviate::get_weaviate_query;
 
 use ic_cdk_macros::{query};
 
@@ -16,6 +16,19 @@ use ic_cdk_macros::{query};
 //   AssetNoContent, CommitBatch, InitAssetKey, InitUploadResult, UploadChunk, UploadChunkResult,
 // };
 
+mod storage;
+mod controllers;
+mod rules;
+mod msg;
+mod types;
+mod assert;
+mod db;
+mod list;
+mod memory;
+
+pub use crate::storage::store::{
+    count_assets_store, delete_asset_store, get_asset_store, get_content_chunks_store,
+};
 
 #[query]
 pub fn whoami(name: String) -> String {
