@@ -6,8 +6,8 @@
       "type": "rust"
     },
     "satellite": {
-			"candid": "src/ugd_backend/db/satellite/satellite.did",
-			"package": "satellite",
+			"candid": "src/ugd_backend/satellite.did",
+			"package": "ugd_backend",
 			"type": "rust",
 			"declarations": {
 				"node_compatibility": true

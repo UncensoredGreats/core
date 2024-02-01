@@ -1,8 +1,8 @@
 mod source_cards;
 pub use source_cards::{save_sc, bookmark_sc, delete_sc, get_sc, get_bookmarks};
 
-// mod weaviate;
-// pub use weaviate::get_weaviate_query;
+mod weaviate;
+pub use weaviate::get_weaviate_query;
 
 use ic_cdk_macros::{query};
 
@@ -25,6 +25,7 @@ mod assert;
 mod db;
 mod list;
 mod memory;
+mod impls;
 
 pub use crate::storage::store::{
     count_assets_store, delete_asset_store, get_asset_store, get_content_chunks_store,
