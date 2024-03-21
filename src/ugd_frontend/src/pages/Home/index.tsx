@@ -13,7 +13,7 @@ function Home() {
         (async()=>{
             // await new Promise(p=> setTimeout(p,1000))
 
-            dispatch(setView('search'));
+            dispatch(setView('home'));
         })()
     },[])
 	return (

@@ -24,6 +24,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="*" element={<Layout />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </BrowserRouter>
       </BookMarkedSourceCardProvider>
@@ -54,12 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     root.render(
       <React.StrictMode>
         <Provider store={store}>
-          <Home />
-        {/*   <AuthorProvider>
+          <AuthorProvider>
             <SettingsProvider>
               <App />
             </SettingsProvider>
-          </AuthorProvider> */}
+          </AuthorProvider>
         </Provider>
       </React.StrictMode>
     );
