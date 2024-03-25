@@ -43,14 +43,15 @@ export default function SearchField() {
 			}`}
 		>
 			<input
-				className="bg-transparent flex-grow text-2xl font-syne font-bold leading-7  tracking-wider ring-0 focus:ring-0 outline-none"
+				className="pl-10 md:p-0 bg-transparent flex-grow text-2xl font-syne font-bold leading-7 tracking-wider ring-0 focus:ring-0 outline-none"
 				placeholder="Ask me anything..."
 				value={search}
 				onKeyDown={handleKeyDown}
 				onChange={handleSearchInput}
 			/>
-
-			{search.length > 0 ? <RxCross1 onClick={handleClearSearchInput} className="cursor-pointer" size={30}/> : <IoIosSearch size={30} />}
+			<div className="hidden md:block">
+				{search.length > 0 ? <RxCross1 onClick={handleClearSearchInput} className="cursor-pointer" size={30}/> : <IoIosSearch size={30} />}
+			</div>
 		</div>
 	);
 }

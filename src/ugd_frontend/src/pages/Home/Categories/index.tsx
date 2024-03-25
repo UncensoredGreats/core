@@ -111,21 +111,25 @@ function Categories() {
                     }`}
                 >
                     <div
-                        className={`flex-grow flex-shrink-0 basis-[780px] border text-center cursor-pointer bg-cover bg-center flex flex-col justify-end relative`}
+                        className={`flex-grow flex-shrink-0 basis-[195px] md:basis-[780px] border text-center cursor-pointer relative`}
                         onClick={() => handleCategoryClick(category)}
-                        style={{
-                            backgroundImage: `url(images/categories/${category.image})`,
-                        }}
                     >
+                        <div
+                            className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+                            style={{ backgroundImage: `url(images/categories/${category.image})` }}
+                        ></div>
+
+                        {/* Darken Overlay */}
+                        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+
                         {selectedCategory &&
                             selectedCategory.key === category.key && (
                                 <div
                                     onClick={hideSelectedCategory}
-                                    className="flex justify-between items-center p-2 border border-solid border-white rounded-full absolute top-8 right-8"
+                                    className="z-20 flex justify-between items-center p-2 border border-solid border-white rounded-full absolute top-4 right-4 md:top-8 md:right-8"
                                 >
                                     <svg
-                                        width="30"
-                                        height="30"
+                                    className="h-6 w-6 md:h-8 md:w-8"
                                         viewBox="0 0 30 26"
                                         fill="currentColor"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -138,21 +142,23 @@ function Categories() {
                                 </div>
                             )}
 
-                        <div
-                            className={`md:p-6 p-4 ${
-                                selectedCategory &&
-                                selectedCategory.key === category.key
-                                    ? "w-1/5"
-                                    : "w-full"
-                            } flex flex-col justify-between items-center  gap-6`}
-                        >
-                            {/* <h1 className=" font-syne text-2xl lg:text-3xl xl:text-4xl basis-20"> */}
-                            <h1 className="text-[5vw] sm:text-[4vw] md:text-[3vw] lg:text-[2vw]  font-syne basis-20">
-                                {category.title}
-                            </h1>
-                            <span className="font-roboto-condensed text-2xl self-end">
-                                {category.books} books
-                            </span>
+                        <div className="relative z-10 top-0 left-0 w-full h-full bg-cover bg-center flex flex-col justify-end">
+                            <div
+                                className={`md:p-6 p-2 ${
+                                    selectedCategory &&
+                                    selectedCategory.key === category.key
+                                        ? "w-1/2 md:w-1/5"
+                                        : "w-full"
+                                } flex flex-col justify-between items-center md:gap-6`}
+                            >
+                                {/* <h1 className=" font-syne text-2xl lg:text-3xl xl:text-4xl basis-20"> */}
+                                <h1 className="text-xl sm:text-[4vw] md:text-[3vw] lg:text-[2vw]  font-syne md:basis-20">
+                                    {category.title}
+                                </h1>
+                                <span className="font-roboto-condensed text-sm md:text-2xl md:self-end">
+                                    {category.books} books
+                                </span>
+                            </div>
                         </div>
                     </div>
 

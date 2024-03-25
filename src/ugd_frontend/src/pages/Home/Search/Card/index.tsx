@@ -49,26 +49,26 @@ const Card: React.FC<Props> = ({ item }) => {
 		<div
 			className="p-4 text-black shadow-xl border border-solid rounded-lg bg-white transition-all duration-500 flex gap-1 flex-col justify-center items-stretch"
 		>
-			<div className="flex">
+			<div className="flex items-stretch">
 				<div
-					className="basis-[180px] flex-shrink-0 h-64"
+					className="basis-[86px] md:basis-[180px] flex-shrink-0 h-[130px] md:h-64"
 					style={{
 						backgroundImage: `url(images/categories/${item.image})`,
 					}}
 				></div>
-				<div className="flex-grow flex flex-col justify-between p-2 gap-2">
-					<div className="flex justify-between">
+				<div className="flex-grow flex flex-col justify-between px-2 md:p-2 gap-2">
+					<div className="flex justify-between flex-grow md:flex-grow-0">
 						<div className="flex flex-col">
-							<span className="font-roboto-condensed text-xl font-medium">
+							<span className="font-roboto-condensed text-sm md:text-xl font-medium">
 								ingo swann
 							</span>
-							<span className="font-syne text-2xl font-semibold">
+							<span className="font-syne text-lg md:text-2xl font-semibold">
 								Penetration
 							</span>
 							<span className="font-roboto-condensed text-sm font-normal text-[#8E8E8E]">
 								Non Fiction 2011
 							</span>
-							<div className="flex flex-wrap items-center gap-2">
+							<div className="flex flex-wrap items-end md:items-center gap-2 flex-grow md:flex-grow-0">
 								<div className="flex justify-start flex-wrap item-center gap-2">
 									{["RELIGION", "GENERALITIES AND IT"].map(
 										(category, index, arr) => (
@@ -99,14 +99,14 @@ const Card: React.FC<Props> = ({ item }) => {
 							/>
 						</div>
 					</div>
-					<div className="flex justify-start flex-wrap item-center gap-2">
+					<div className="hidden md:flex justify-start flex-wrap item-center gap-2">
 						{[
 							"Metaphysics",
 							"Natural Theology",
 							"Fossils & prehistoric life",
 							"Classical and modern Greek literatures",
 						].map((subCategory) => (
-							<div className="truncate px-4 py-1 flex justify-center items-center border border-black rounded-full font-roboto-condensed text-sm font-normal cursor-pointer hover:bg-black hover:text-white transition-all duration-300 ease-in">
+							<div className="truncate px-4 py-1 flex justify-center items-center border border-black rounded-full font-roboto-condensed text-xs font-normal cursor-pointer hover:bg-black hover:text-white transition-all duration-300 ease-in">
 								{subCategory}
 							</div>
 						))}
@@ -123,6 +123,18 @@ const Card: React.FC<Props> = ({ item }) => {
                 />
                 <span> 1,2k</span>
             </div>
+			<div className="flex md:hidden  justify-start flex-wrap item-center gap-2">
+				{[
+					"Metaphysics",
+					"Natural Theology",
+					"Fossils & prehistoric life",
+					"Classical and modern Greek literatures",
+				].map((subCategory) => (
+					<div className="truncate px-4 py-1 flex justify-center items-center border border-black rounded-full font-roboto-condensed text-sm font-normal cursor-pointer hover:bg-black hover:text-white transition-all duration-300 ease-in">
+						{subCategory}
+					</div>
+				))}
+			</div>
 			<div
                
             >
